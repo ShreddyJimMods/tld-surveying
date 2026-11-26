@@ -1,4 +1,4 @@
-// Adds "Surveying" to the journal's Skills list as a real Skill object on the game's skills manager.
+// Adds "Cartography" to the journal's Skills list as a real Skill object on the game's skills manager.
 // The game saves each vanilla skill in its own field, so this extra entry is never written to the save.
 // Points are not earned yet (that is stage 2); the entry shows level 1 with the planned descriptions.
 using System;
@@ -28,10 +28,10 @@ namespace Surveying
             var s = Settings.Instance;
             var d = new Dictionary<string, string>
             {
-                [NameKey] = "Surveying",
+                [NameKey] = "Cartography",
                 ["GAMEPLAY_SurveyingDescriptionTier1"] = "You can scratch out a rough sketch of what's in front of you. North is that way. Probably.",
                 ["GAMEPLAY_SurveyingDescriptionTier2"] = "You're getting a feel for the land. Your sketches come together more quickly, and you waste less Charcoal doing it.",
-                ["GAMEPLAY_SurveyingDescriptionTier3"] = "You're a capable surveyor now. You've learned to read direction from the Sun and stars, and to make good use of high ground and failing light.",
+                ["GAMEPLAY_SurveyingDescriptionTier3"] = "You're a capable cartographer now. You've learned to read direction from the Sun and stars, and to make good use of high ground and failing light.",
                 ["GAMEPLAY_SurveyingDescriptionTier4"] = "Mapping has become second nature. You take note of the ground you cover in any weather, and you usually have a fair idea of where you are.",
                 ["GAMEPLAY_SurveyingDescriptionTier5"] = "Your skills are legendary. You carry Great Bear in your head. You are the map.",
             };
@@ -39,7 +39,7 @@ namespace Surveying
             for (int lv = 1; lv <= 5; lv++)
             {
                 var lines = new List<string>();
-                if (lv == 1) lines.Add("Base Surveying Skill");
+                if (lv == 1) lines.Add("Base Cartography Skill");
                 float cut = lv >= 4 ? s.timeReductionHigh : s.timeReductionLow;
                 if (s.fasterSurveys && lv >= 2 && cut > 0f) lines.Add($"Survey time reduced by {cut:0}%");
                 if (s.keepCharcoal && lv >= 2 && s.keepCharcoalChance > 0f) lines.Add($"{s.keepCharcoalChance:0}% Chance to keep Charcoal after a Survey");

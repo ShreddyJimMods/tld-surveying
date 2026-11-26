@@ -2,7 +2,7 @@
   <Import Project="GameDir.props" Condition="Exists('GameDir.props')" />
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>Surveying</AssemblyName>
+    <AssemblyName>SkilledCartographer</AssemblyName>
     <RootNamespace>Surveying</RootNamespace>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>

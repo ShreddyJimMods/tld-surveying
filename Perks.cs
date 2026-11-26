@@ -13,6 +13,9 @@ namespace Surveying
     {
         internal static readonly Settings Instance = new Settings();
 
+        // Settings stay in Mods/Surveying.json, the name used before the mod was renamed.
+        private Settings() : base("Surveying") { }
+
         [Section("Skill")]
         [Name("Points per fresh Survey")]
         [Description("Points earned by a Survey that covers only new ground. Overlap with earlier Surveys earns proportionally less. (Default = 1)")]
@@ -116,13 +119,13 @@ namespace Surveying
         [Description("On Familiar Ground, the map shows the trail you have walked since your last Survey.")]
         public bool familiarTrailLine = true;
 
-        [Name("TESTING: Surveying level override")]
+        [Name("TESTING: Cartography level override")]
         [Description("0 = off. Makes every benefit behave as if you had this level. Leave at 0 for normal play.")]
         [Slider(0f, 5f, 6)]
         public float testLevel = 0f;
 
         [Name("TESTING: show the level-up banner once")]
-        [Description("Shows the Surveying level-up banner for your current level a moment after you confirm. Switches itself off.")]
+        [Description("Shows the Cartography level-up banner for your current level a moment after you confirm. Switches itself off.")]
         public bool testBanner = false;
 
         [Name("TESTING: treat every region as fully surveyed")]
@@ -388,12 +391,12 @@ namespace Surveying
                 string tierName = "";
                 Safe("tiername", () => tierName = GameManager.GetSkillsManager().GetTierName(level - 1));
                 GameManager.GetSkillNotify().MaybeShowLevelUp(SkillEntry.BannerSprite, SkillEntry.Text["GAMEPLAY_SkillSurveying"], tierName, level);
-                Info($"level-up banner: sprite '{SkillEntry.BannerSprite}', header 'Surveying', footer '{tierName}', number {level}");
+                Info($"level-up banner: sprite '{SkillEntry.BannerSprite}', header 'Cartography', footer '{tierName}', number {level}");
             }
             catch (Exception e)
             {
                 if (Failed.Add("banner")) Mod.Log.Error("[perk] banner: " + e);
-                Safe("levelup", () => HUDMessage.AddMessage($"Surveying skill increased to {level}", 5f, true, false));
+                Safe("levelup", () => HUDMessage.AddMessage($"Cartography skill increased to {level}", 5f, true, false));
             }
         }
 
@@ -697,7 +700,7 @@ namespace Surveying
             float pts = done * Settings.Instance.pointsPerKnownLocation;
             if (pts <= 0f) { Persist(); return; }
             Award(pts, $"{done} locations already surveyed");
-            deferred = $"Surveying: {done} known locations credited";
+            deferred = $"Cartography: {done} known locations credited";
         });
     }
 }

@@ -10,7 +10,7 @@ using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Surveying.Mod), "Surveying", "0.9.12", "ShreddyJim", "https://github.com/ShreddyJimMods/tld-surveying/releases")]
+[assembly: MelonInfo(typeof(Surveying.Mod), "Skilled Cartographer", "0.10.0", "ShreddyJim", "https://github.com/ShreddyJimMods/tld-skilled-cartographer/releases")]
 [assembly: MelonGame("Hinterland", "TheLongDark")]
 
 namespace Surveying
@@ -71,7 +71,7 @@ namespace Surveying
                 }
             }
             JournalSkill = cat.CreateEntry("JournalSkill", true, description:
-                "Show Surveying in the journal's Skills list. Turn off if the Skills page misbehaves.");
+                "Show Cartography in the journal's Skills list. Turn off if the Skills page misbehaves.");
             if (JournalSkill.Value)
             {
                 Hook(typeof(Panel_Log), "Enable", new[] { typeof(bool) }, "Pre_PanelLog", null, typeof(SkillEntry));
@@ -79,7 +79,7 @@ namespace Surveying
                 Hook(typeof(Panel_Log), "RefreshSelectedSkillDescriptionView", null, "Pre_PanelLog", null, typeof(SkillEntry));
             }
 
-            Settings.Instance.AddToModSettings("Surveying");
+            Settings.Instance.AddToModSettings("Skilled Cartographer");
             Hook(typeof(CharcoalItem), "StartDetailSurvey", null, "Pre_Start", null, typeof(Perks));
             Hook(typeof(CharcoalItem), "CancelDetailSurvey", null, "Pre_Cancel", null, typeof(Perks));
             Hook(typeof(CharcoalItem), "ConsumeCharcoal", null, "Pre_Consume", null, typeof(Perks));
@@ -95,7 +95,7 @@ namespace Surveying
                 Hook(typeof(Encumber), name, null, "Pre_Capacity", null, typeof(World));
             Hook(typeof(Panel_Map), "Enable", new[] { typeof(bool), typeof(bool) }, null, "Post_MapEnable", typeof(World));
 
-            Log.Msg("loaded (logging, plus a Surveying entry in the journal's Skills list; perks: points, faster surveys, keep charcoal, radius, trail notes, Familiar Ground, bearings, position circle, altitude)");
+            Log.Msg("loaded (logging, plus a Cartography entry in the journal's Skills list; perks: points, faster surveys, keep charcoal, radius, trail notes, Familiar Ground, bearings, position circle, altitude)");
         }
 
         internal void Hook(Type type, string name, Type[] args, string prefix, string postfix = null, Type holder = null)
