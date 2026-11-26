@@ -1,20 +1,22 @@
 # Skilled Cartographer
 
-When the Faithful Cartographer update landed, I was hoping for more. Cartography was still pretty bare, and it had nothing to do with the skill system. **Skilled Cartographer** fixes that. It adds **Cartography** as a proper skill, levelled by surveying new ground, and the further you take it, the better you get at finding your way around Great Bear.
+When the Faithful Cartographer update landed, I was hoping for more. Cartography was still pretty bare, and it had no interaction with the skill system. **Skilled Cartographer** finally fixes that. It adds **Cartography** as a proper skill, leveled by surveying new ground, and the further you take it, the better you get at finding your way around Great Bear.
+
+It also serves as a slight overhaul to mapping and navigation, adding an additional compass element to the HUD and new UI elements to the map.
 
 It never explores for you. Nothing is revealed that you haven't surveyed or walked yourself.
 
 ## What you get
 
-- **Cartography in the journal**, five levels, with its own level-up banner.
-- **Quicker surveys**, and a chance to keep your charcoal.
-- **Trail notes**: the ground you've covered since your last survey gets sketched in too.
-- **More from high ground**, and surveys that stretch into dawn and dusk.
-- **A sun compass** on the HUD when you can read the sky, plus a north marker on the map.
-- **A rough "you are here" circle** on the map that widens the further you wander from your last survey.
-- **Familiar Ground**: finish surveying a region and it pays you back while you're there. You move faster, carry a bit more and sprain less.
+- **Cartography as a new skill**, five levels, with its own level-up banner.
+- **Quicker surveys as you level**, and a chance to keep your charcoal after mapping.
+- **Trail notes**: the ground you've covered since your last survey gets sketched in too - in a much smaller radius. This represents not having amnesia about where you walked 30 seconds ago.
+- **More advantage from high ground**, and surveys that stretch into dawn and dusk as your skills get sharper.
+- **Navigate by the sun and stars!** Upon reaching Level 3, a compass will appear if the weather is clear enough. Further skill levels allow you to navigate in harsher weather.
+- **A rough "you are here" circle** on the map that widens the further you wander from your last survey. The circle gets smaller at higher skill levels, but never exact.
+- **Familiar Ground**: A lasting reward for fully surveying a region. You move faster, carry a bit more and are a little less likely to lose your footing in regions you know well.
 
-Every perk can be tuned or switched off on the Skilled Cartographer page of Mod Settings.
+Every perk can be tuned or switched off on the Skilled Cartographer page of Mod Settings, and most numbers can be individually configured.
 
 ## Requirements
 
